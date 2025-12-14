@@ -19,9 +19,8 @@ public class AccidentalOutageServiceClient {
     private final WebClient webClient;
     private static final Logger log = LoggerFactory.getLogger(AccidentalOutageServiceClient.class);
 
-    public AccidentalOutageServiceClient(WebClient.Builder builder) {
-        this.webClient = builder.baseUrl("https://outages.distributie-energie.ro/api/incidents/")
-                .build();
+    public AccidentalOutageServiceClient(WebClient webClient) {
+        this.webClient = webClient;
     }
 
     private List<AccidentalPowerOutDto> getPowerOut(String uri) {
@@ -44,7 +43,7 @@ public class AccidentalOutageServiceClient {
                 .block();
     }
 
-    public List<AccidentalPowerOutDto> getAllPowerOut() {
+    public List<AccidentalPowerOutDto> getAllAccidentalPowerOut() {
         return Stream.of(
                 getPowerOut("MN/0"),
                 getPowerOut("TS/0"),
