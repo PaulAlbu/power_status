@@ -10,8 +10,6 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 //TODO
-//    1. Schimb clasele in lb engleza
-//    2 Sa vad daca nu pot sa mut logica din metoda getPowerOut() -> in Bean din clasa WebClientConfig
 //    3. Sa fac un client pt Intreruperi programate -> care sa imi aduca datele
 //    4. Gasit metoda prin care sa iterez peste intrerupreile accidentale (care e diferita de cele programate -> si ca obiect, dar si ca nu sunt anuntate inainte ca timp)
 //    5. Gasit cum imi dau seama daca adresa nu e exacta? Daca utilizatorul nu introduce aceeasi adresa ca si in datele mele?

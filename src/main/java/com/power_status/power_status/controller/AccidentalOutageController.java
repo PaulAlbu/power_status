@@ -16,8 +16,8 @@ public class AccidentalOutageController {
     }
 
     @GetMapping("/getAccidentalOutages")
-    public List<AccidentalPowerOutDto> getAccidentalOutages() {
-        return accidentOutClient.getAllPowerOut();
+    public List<AccidentalPowerOutDto> getAllAccidentalOutages() {
+        return accidentOutClient.getAllAccidentalPowerOut();
     }
 
 }
