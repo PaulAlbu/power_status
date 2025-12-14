@@ -3,7 +3,7 @@ package com.power_status.power_status.dto;
 import lombok.Data;
 
 @Data
-public class IntrerupereAccidentala {
+public class AccidentalPowerOutDto {
     private Long id;
     private String judet;
     private String localitate;
