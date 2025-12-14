@@ -1,6 +1,6 @@
 package com.power_status.power_status.service.external;
 
-import com.power_status.power_status.dto.IntrerupereAccidentala;
+import com.power_status.power_status.dto.AccidentalPowerOutDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -24,13 +24,13 @@ public class AccidentalOutageServiceClient {
                 .build();
     }
 
-    private List<IntrerupereAccidentala> getPowerOut(String uri) {
+    private List<AccidentalPowerOutDto> getPowerOut(String uri) {
         return webClient
                 .get()
                 .uri(uri)
                 .exchangeToMono(response -> {
                     if (response.statusCode().is2xxSuccessful()) {
-                        return response.bodyToFlux(IntrerupereAccidentala.class).collectList();
+                        return response.bodyToFlux(AccidentalPowerOutDto.class).collectList();
                     } else {
                         // fallback: empty list if API returns error
                         log.warn("API returned {} - returning empty list", response.statusCode());
@@ -44,7 +44,7 @@ public class AccidentalOutageServiceClient {
                 .block();
     }
 
-    public List<IntrerupereAccidentala> getAllPowerOut() {
+    public List<AccidentalPowerOutDto> getAllPowerOut() {
         return Stream.of(
                 getPowerOut("MN/0"),
                 getPowerOut("TS/0"),

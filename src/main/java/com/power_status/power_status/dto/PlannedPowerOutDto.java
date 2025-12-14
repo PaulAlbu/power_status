@@ -3,7 +3,7 @@ package com.power_status.power_status.dto;
 import lombok.Data;
 
 @Data
-public class IntrerupereProgramata {
+public class PlannedPowerOutDto {
     private Long id;
     private String nivel;
     private String sucursala;
