@@ -9,7 +9,7 @@ public class WebClientConfig {
         @Bean
         public WebClient webClient() {
             return WebClient.builder()
-                    .baseUrl("https://outages.distributie-energie.ro/api/incidents/")
+                    .baseUrl("https://outages.distributie-energie.ro/api/")
                     .build();
         }
 
